@@ -1,12 +1,12 @@
 {
     "compilerOptions": {
-        "module": "none",
+        "module": "ESNext",
         "target": "es5",
         "lib": ["es6", "dom"],
         "noImplicitAny": true,
         "removeComments": true,
         "preserveConstEnums": true,
-        "outFile": "dist/pixi-compressed-textures.js",
+        "moduleResolution": "Node",
         "sourceMap": true,
         "inlineSources": true,
         "declaration": true

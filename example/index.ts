@@ -1,5 +1,6 @@
 import * as PIXI from 'pixi.js';
 import { Spine } from 'pixi-spine';
+import { init } from '../src/index';
 
 console.log('hello world!');
 
@@ -15,11 +16,31 @@ const app = new PIXI.Application({
   autoStart: true,
 });
 
+init(app.renderer as PIXI.Renderer);
+
 document.body.appendChild(app.view);
 
 //
 const rootContainer = new PIXI.Container();
 app.stage.addChild(rootContainer);
+
+// sprite
+// const ktxUrl: string = 'spine/spineboy-pro.ktx';
+// const loader1 = new PIXI.Loader();
+// loader1.add({
+//   url: ktxUrl,
+//   metadata: {
+//     alphaMode: 1,
+//     useCompressedTexture: true,
+//     // choice: ['.ktx'],
+//   }
+// });
+// loader1.load(function(loader, resources) {
+//   const sprite = new PIXI.Sprite(resources[ktxUrl].texture);
+//   sprite.position.set(375, 812);
+//   sprite.anchor.set(0.5);
+//   rootContainer.addChild(sprite);
+// });
 
 // spine
 const spineAssets = {
@@ -33,6 +54,9 @@ const spineAssets = {
 const loader = new PIXI.Loader();
 loader.add({
   url: spineAssets.json,
+  metadata: {
+    imageMetadata: { useCompressedTexture: true, choice: [".ktx", ".png"] },
+  }
 });
 loader.load(function(_loader, resources) {
   const spineData = resources[spineAssets.json].spineData;
