@@ -47,7 +47,7 @@ export function detectExtensions(renderer: PIXI.Renderer, resolution?: number, d
 		if (data.pvrtc) extensions.push('.pvr');
 		if (data.atc) extensions.push('.atc');
 		if (data.etc1) extensions.push('.etc1');
-		if (data.astc) extensions.push('.astc', '.ktx');
+		if (data.astc) extensions.push('.astc', '.astc.ktx', '.ktx');
 	}
 	//retina or not
 	let ext = extensions.slice(0);

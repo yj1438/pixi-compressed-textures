@@ -55,7 +55,8 @@ const loader = new PIXI.Loader();
 loader.add({
   url: spineAssets.json,
   metadata: {
-    imageMetadata: { useCompressedTexture: true, choice: [".ktx", ".png"] },
+    // 这里的 choice 优先级从后往前，所以 .astc.ktx 会被优先选择
+    imageMetadata: { useCompressedTexture: true, choice: [".png", ".ktx", ".astc.ktx"] },
   }
 });
 loader.load(function(_loader, resources) {
