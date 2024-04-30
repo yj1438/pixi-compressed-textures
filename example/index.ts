@@ -25,7 +25,8 @@ const rootContainer = new PIXI.Container();
 app.stage.addChild(rootContainer);
 
 // sprite
-// const ktxUrl: string = 'spine/spineboy-pro.ktx';
+// 使用压缩纹理
+// const ktxUrl: string = 'spine/spineboy-pro.astc.ktx';
 // const loader1 = new PIXI.Loader();
 // loader1.add({
 //   url: ktxUrl,
@@ -42,7 +43,9 @@ app.stage.addChild(rootContainer);
 //   rootContainer.addChild(sprite);
 // });
 
+
 // spine
+// 使用压缩纹理
 const spineAssets = {
   json: 'spine/spineboy-pro.json',
 }
@@ -56,7 +59,7 @@ loader.add({
   url: spineAssets.json,
   metadata: {
     // 这里的 choice 优先级从后往前，所以 .astc.ktx 会被优先选择
-    imageMetadata: { useCompressedTexture: true, choice: [".png", ".ktx", ".astc.ktx"] },
+    imageMetadata: { useCompressedTexture: true, choice: [".png", ".ktx"] },
   }
 });
 loader.load(function(_loader, resources) {

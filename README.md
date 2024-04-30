@@ -8,6 +8,10 @@ Supports DDS (S3TC DXT1-3-5, ATC, ATCA/ATC explicit, ATCI/ATC interpolated), PVR
 
 Supports advanced DXT compression [crunch](https://github.com/BinomialLLC/crunch)
 
+## Notice
+
+`pixi-compressed-texture` cannot be used at the same time as `@pixi/compressed-textures`.
+
 ## Minimum demo
 
 Pretty easy to hack parser into your loader.

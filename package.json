@@ -21,7 +21,7 @@
     "prestart": "yarn cleanup",
     "start": "parallelshell \"yarn watch\"",
     "watch": "tsc -w",
-    "dev": "vite",
+    "dev": "vite --force",
     "prebuild": "yarn cleanup",
     "make:dts": "node scripts/make_dts.js",
     "build": "tsc && yarn make:dts"
